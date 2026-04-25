@@ -12,7 +12,12 @@ export const metadata: Metadata = {
   title: "Yajush Srivastava | Portfolio",
   description: "Computer Science Student & Developer",
   icons: {
-    icon: "/static/favicon.png",
+    icon: [
+      { url: "/favicon-package/web-app-manifest-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-package/web-app-manifest-512x512.png", sizes: "512x512", type: "image/png" },
+      { url: "/static/favicon.png", type: "image/png" },
+    ],
+    apple: "/favicon-package/web-app-manifest-192x192.png",
   },
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -62,10 +63,18 @@ export default function Navbar() {
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <Link
                     href="/"
-                    className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors"
+                    className="flex size-10 items-center justify-center rounded-full transition-transform hover:scale-105"
+                    aria-label="Go to home"
                     onClick={(e) => scrollToSection(e, 'home')}
                 >
-                    YS
+                    <Image
+                        src="/favicon-package/web-app-manifest-192x192.png"
+                        alt=""
+                        width={40}
+                        height={40}
+                        priority
+                        className="size-10 rounded-full"
+                    />
                 </Link>
 
                 <div className="flex items-center gap-6">
