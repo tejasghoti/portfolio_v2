@@ -3,10 +3,11 @@ import {
     SiMysql, SiPostgresql, SiScikitlearn, SiTensorflow, SiPytorch,
     SiKaggle, SiGooglecolab, SiUbuntu, SiBrave, SiSpotify, SiGithub,
     SiNextdotjs, SiReact, SiTailwindcss, SiTypescript, SiFramer,
-    SiNumpy, SiPandas, SiScipy, SiJavascript
+    SiNumpy, SiPandas, SiScipy, SiJavascript, SiPydantic,
+    SiGooglegemini, SiOpenai, SiMeta
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { FiSearch, FiCode, FiTerminal } from "react-icons/fi";
+import { FiCpu, FiSearch } from "react-icons/fi";
 import { IconType } from "react-icons";
 
 export const techStackIcons: Record<string, IconType> = {
@@ -33,6 +34,7 @@ export const techStackIcons: Record<string, IconType> = {
     "Spotify": SiSpotify,
     "Perplexity": FiSearch,
     "GitHub": SiGithub,
+    "Next": SiNextdotjs,
     "Next.js": SiNextdotjs,
     "React": SiReact,
     "Tailwind CSS": SiTailwindcss,
@@ -42,7 +44,13 @@ export const techStackIcons: Record<string, IconType> = {
     "Pandas": SiPandas,
     "Scipy": SiScipy,
     "JS": SiJavascript,
-    "JavaScript": SiJavascript
+    "JavaScript": SiJavascript,
+    "Pydantic": SiPydantic,
+    "Groq API": FiCpu,
+    "Llama 3.3 70B": SiMeta,
+    "Llama 3.1 8B": SiMeta,
+    "Google Gemini 2.5 Flash": SiGooglegemini,
+    "OpenAI": SiOpenai
 };
 
 export const techStackUrls: Record<string, string> = {
@@ -69,6 +77,7 @@ export const techStackUrls: Record<string, string> = {
     "Spotify": "https://open.spotify.com/",
     "Perplexity": "https://www.perplexity.ai/",
     "GitHub": "https://github.com/",
+    "Next": "https://nextjs.org/",
     "Next.js": "https://nextjs.org/",
     "React": "https://react.dev/",
     "Tailwind CSS": "https://tailwindcss.com/",
@@ -78,7 +87,13 @@ export const techStackUrls: Record<string, string> = {
     "Pandas": "https://pandas.pydata.org/",
     "Scipy": "https://scipy.org/",
     "JS": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    "JavaScript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    "JavaScript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "Pydantic": "https://docs.pydantic.dev/",
+    "Groq API": "https://groq.com/",
+    "Llama 3.3 70B": "https://www.llama.com/",
+    "Llama 3.1 8B": "https://www.llama.com/",
+    "Google Gemini 2.5 Flash": "https://ai.google.dev/gemini-api/docs/models",
+    "OpenAI": "https://openai.com/"
 };
 
 export const techStackData = [

@@ -1,20 +1,25 @@
 {
   "projects": [
     {
-      "id": "quiz-game",
-      "title": "Quiz Game",
-      "description": "My first complete end-to-end Python backend project: a quiz and exam platform for Class 11–12 students in India, featuring a large, difficulty-segmented question bank and support for multi-subject blended exams. Future improvements include new features and a refined UI.",
+      "id": "playground-ai",
+      "title": "PlayGroundAI",
+      "description": "Full-stack multi-agent AI debate platform with streamed LLM personas, conversation-aware prompts, structured Gemini judging, provider abstractions, resilient async APIs, and Pytest-backed FastAPI services.",
       "tech_stack": [
+        "Next",
+        "React",
+        "Tailwind CSS",
         "Python",
         "FastAPI",
-        "PostgreSQL",
-        "HTML",
-        "CSS",
-        "JS"
+        "Pydantic",
+        "Groq API",
+        "Llama 3.3 70B",
+        "Llama 3.1 8B",
+        "Google Gemini 2.5 Flash",
+        "OpenAI"
       ],
-      "github_link": "https://github.com/Yajush-afk/Quiz-Game",
-      "demo_link": "https://quiz-game-lz7o.onrender.com",
-      "image_url": "/projects/quiz-app.png",
+      "github_link": "https://github.com/Yajush-afk/PlayGroundAI",
+      "demo_link": "https://playgroundai-yajush.vercel.app/",
+      "image_url": "/projects/playground-ai.png",
       "status": "deployed"
     },
     {
@@ -34,6 +39,23 @@
       "status": "deployed"
     },
     {
+      "id": "quiz-game",
+      "title": "Quiz Game",
+      "description": "My first complete end-to-end Python backend project: a quiz and exam platform for Class 11–12 students in India, featuring a large, difficulty-segmented question bank and support for multi-subject blended exams. Future improvements include new features and a refined UI.",
+      "tech_stack": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "github_link": "https://github.com/Yajush-afk/Quiz-Game",
+      "demo_link": "https://quiz-game-lz7o.onrender.com",
+      "image_url": "/projects/quiz-app.png",
+      "status": "deployed"
+    },
+    {
       "id": "neural-networks",
       "title": "Visual NN",
       "description": "Building neural networks from scratch using only mathematics, NumPy, and Pandas—no ML/DL libraries. Includes a simple UI to help users visualize and better understand complex neural network behavior.",
@@ -46,7 +68,7 @@
       ],
       "github_link": null,
       "demo_link": null,
-      "image_url": "/projects/coming-soon.png",
+      "image_url": "/projects/stay-tuned.png",
       "status": "building"
     },
     {
@@ -62,7 +84,7 @@
       ],
       "github_link": null,
       "demo_link": null,
-      "image_url": "/projects/coming-soon.png",
+      "image_url": "/projects/stay-tuned.png",
       "status": "building"
     }
   ]

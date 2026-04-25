@@ -1,9 +1,9 @@
 "use client";
 
 import { useSong } from "@/context/SongContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { FiSkipBack, FiSkipForward, FiPlay, FiPause, FiVolume2, FiVolumeX, FiInfo, FiList, FiX } from "react-icons/fi";
-import { useEffect, useState, useRef } from "react";
+import { CSSProperties, useEffect, useState, useRef } from "react";
 
 import Image from "next/image";
 
@@ -12,7 +12,16 @@ export default function SongPlayer() {
     const [showRipple, setShowRipple] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
     const [showSongList, setShowSongList] = useState(false);
+    const [isHeroVisible, setIsHeroVisible] = useState(true);
     const isFirstMount = useRef(true);
+    const shouldReduceMotion = useReducedMotion();
+    const verticalSliderStyle: CSSProperties = { writingMode: "vertical-lr", direction: "rtl" };
+    const playerTransition = shouldReduceMotion
+        ? { duration: 0.16 }
+        : { type: "spring" as const, stiffness: 260, damping: 32 };
+    const overlayTransition = shouldReduceMotion
+        ? { duration: 0.16 }
+        : { duration: 0.25, ease: "easeOut" as const };
 
     // Trigger ripple on song change
     useEffect(() => {
@@ -23,10 +32,28 @@ export default function SongPlayer() {
             return;
         }
 
-        setShowRipple(true);
-        const timer = setTimeout(() => setShowRipple(false), 800); // Ripple duration
-        return () => clearTimeout(timer);
-    }, [currentSong.id, isInitialized]);
+        if (shouldReduceMotion) return;
+
+        const startTimer = setTimeout(() => setShowRipple(true), 0);
+        const endTimer = setTimeout(() => setShowRipple(false), 950);
+        return () => {
+            clearTimeout(startTimer);
+            clearTimeout(endTimer);
+        };
+    }, [currentSong.id, isInitialized, shouldReduceMotion]);
+
+    useEffect(() => {
+        const hero = document.getElementById("home");
+        if (!hero) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsHeroVisible(entry.isIntersecting),
+            { threshold: 0.18 }
+        );
+
+        observer.observe(hero);
+        return () => observer.disconnect();
+    }, []);
 
     if (!isInitialized) return null;
 
@@ -48,17 +75,32 @@ export default function SongPlayer() {
 
     return (
         <>
-            {/* Theme Ripple Animation */}
+            {/* Theme Transition Wash */}
             <AnimatePresence>
                 {showRipple && (
-                    <motion.div
-                        key={currentSong.id}
-                        initial={{ clipPath: "circle(0% at 50px 50px)" }}
-                        animate={{ clipPath: "circle(150% at 50px 50px)" }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
-                        className="fixed inset-0 z-30 pointer-events-none bg-primary/20 backdrop-blur-[2px]"
-                    />
+                    <motion.div key={currentSong.id} className="fixed inset-0 z-30 pointer-events-none overflow-hidden">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: [0, 0.22, 0] }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.95, ease: "easeOut" }}
+                            className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,hsl(var(--primary)/0.38),transparent_34%),radial-gradient(circle_at_80%_76%,hsl(var(--accent)/0.22),transparent_42%)]"
+                        />
+                        <motion.div
+                            initial={{ x: "-120%", opacity: 0 }}
+                            animate={{ x: "120%", opacity: [0, 0.42, 0] }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute -inset-y-20 left-0 w-1/2 rotate-12 bg-gradient-to-r from-transparent via-primary/25 to-transparent blur-2xl"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            animate={{ opacity: [0, 0.12, 0], scale: [0.98, 1.02, 1.04] }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.95, ease: "easeOut" }}
+                            className="absolute inset-0 bg-background"
+                        />
+                    </motion.div>
                 )}
             </AnimatePresence>
 
@@ -66,22 +108,22 @@ export default function SongPlayer() {
                 {!isExpanded ? (
                     /* Mini Player */
                     <motion.div
-                        layoutId="player-container"
+                        layoutId={shouldReduceMotion ? undefined : "player-container"}
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        transition={playerTransition}
                         onClick={() => setIsExpanded(true)}
-                        className="fixed bottom-0 left-0 right-0 z-50 w-full md:w-72 md:top-24 md:left-8 md:bottom-auto md:right-auto cursor-pointer"
+                        className="fixed bottom-0 left-0 right-0 z-50 w-full cursor-pointer md:bottom-auto md:right-auto md:left-[clamp(1rem,2vw,2rem)] md:top-[clamp(5rem,10svh,7rem)] md:w-[clamp(16rem,22vw,19rem)]"
                     >
                         {/* Inner Wrapper for Player Content (Overflow Hidden) */}
                         <div className="relative w-full h-full rounded-t-xl md:rounded-xl overflow-hidden border-t md:border border-white/10 shadow-2xl backdrop-blur-md bg-black/40">
                             {/* Dynamic Gradient Background */}
                             <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-primary/40 to-accent/40 pointer-events-none" />
 
-                            <div className="relative p-3 flex gap-3 items-center">
+                            <div className="relative p-[clamp(0.7rem,1.2vw,0.9rem)] flex gap-3 items-center">
                                 {/* Album Art */}
-                                <motion.div layoutId="album-art" className="relative w-12 h-12 rounded-md overflow-hidden shadow-md shrink-0">
+                                <motion.div layoutId={shouldReduceMotion ? undefined : "album-art"} className="relative size-[clamp(3rem,4vw,3.5rem)] rounded-md overflow-hidden shadow-md shrink-0">
                                     <Image
                                         src={currentSong.image}
                                         alt={currentSong.title}
@@ -92,7 +134,7 @@ export default function SongPlayer() {
 
                                 {/* Song Info & Controls */}
                                 <div className="flex flex-col flex-1 min-w-0">
-                                    <motion.div layoutId="song-info" className="flex flex-col mb-1">
+                                    <motion.div layoutId={shouldReduceMotion ? undefined : "song-info"} className="flex flex-col mb-1">
                                         <h3 className="text-sm font-bold text-foreground truncate">{currentSong.title}</h3>
                                         <p className="text-xs text-muted-foreground truncate">{currentSong.artist}</p>
                                     </motion.div>
@@ -113,38 +155,55 @@ export default function SongPlayer() {
 
                             {/* Progress Bar */}
                             <div className="relative h-1 bg-white/10 w-full">
-                                <motion.div className="absolute top-0 left-0 h-full bg-primary" style={{ width: `${progress}%` }} layoutId="progress-bar" />
+                                <motion.div className="absolute top-0 left-0 h-full bg-primary" style={{ width: `${progress}%` }} layoutId={shouldReduceMotion ? undefined : "progress-bar"} />
                             </div>
                         </div>
 
                         {/* My Top 10 Button */}
-                        <div className="absolute -right-28 top-24 hidden md:flex flex-col items-start pointer-events-auto z-50">
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setShowSongList(true);
-                                }}
-                                className="font-[family-name:var(--font-gochi)] text-3xl text-foreground -rotate-12 hover:scale-110 transition-transform cursor-pointer whitespace-nowrap"
-                            >
-                                My top 5
-                            </button>
-                        </div>
+                        <AnimatePresence>
+                            {isHeroVisible && (
+                                <motion.div
+                                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                                    animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                                    transition={overlayTransition}
+                                    className="absolute left-[calc(100%+clamp(0.75rem,1.4vw,1.25rem))] top-[clamp(3.75rem,9svh,5.75rem)] hidden xl:flex max-h-[calc(100svh-10rem)] flex-col items-start pointer-events-auto z-50"
+                                >
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setShowSongList(true);
+                                        }}
+                                        className="font-[family-name:var(--font-gochi)] text-[clamp(1.6rem,2.1vw,2.25rem)] text-foreground -rotate-12 hover:scale-110 transition-transform cursor-pointer whitespace-nowrap"
+                                    >
+                                        My top 5
+                                    </button>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
 
                         {/* Arrow SVG */}
-                        <svg
-                            className="absolute -bottom-32 left-10 w-80 h-40 text-foreground hidden md:block pointer-events-none z-40"
-                            viewBox="0 0 300 150"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            {/* Start from bottom-left edge, swoop down and right, point to text (shortened) */}
-                            <path d="M20,40 Q100,100 220,50" />
-                            <path d="M220,50 L205,55" />
-                            <path d="M220,50 L210,65" />
-                        </svg>
+                        <AnimatePresence>
+                            {isHeroVisible && (
+                                <motion.svg
+                                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                                    animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                                    transition={overlayTransition}
+                                    className="absolute left-[clamp(2rem,4vw,3.25rem)] top-[calc(100%+clamp(0.75rem,2svh,1.5rem))] w-[clamp(12rem,24vw,18rem)] h-[clamp(5.5rem,13svh,8rem)] text-foreground hidden xl:block pointer-events-none z-40"
+                                    viewBox="0 0 300 150"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M20,40 Q100,100 220,50" />
+                                    <path d="M220,50 L205,55" />
+                                    <path d="M220,50 L210,65" />
+                                </motion.svg>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
                 ) : (
                     /* Full Player Overlay */
@@ -152,12 +211,14 @@ export default function SongPlayer() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
+                        transition={overlayTransition}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-[clamp(0.75rem,2vw,1.5rem)]"
                         onClick={() => setIsExpanded(false)}
                     >
                         <motion.div
-                            layoutId="player-container"
-                            className="relative w-full max-w-md bg-card border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+                            layoutId={shouldReduceMotion ? undefined : "player-container"}
+                            transition={playerTransition}
+                            className="relative w-[min(92vw,28rem)] bg-card border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[calc(100svh-1.5rem)]"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Background Blur of Album Art */}
@@ -166,7 +227,7 @@ export default function SongPlayer() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                             </div>
 
-                            <div className="relative z-10 p-6 md:p-8 flex flex-col items-center text-center h-full justify-center space-y-4 md:space-y-8 overflow-y-auto scrollbar-hide">
+                            <div className="relative z-10 p-[clamp(1rem,2.5svh,1.75rem)] flex flex-col items-center text-center h-full justify-center space-y-[clamp(0.75rem,2.2svh,1.5rem)] overflow-y-auto scrollbar-hide">
                                 {/* Header */}
                                 <div className="w-full flex justify-between items-center text-xs font-bold tracking-widest uppercase text-white relative shrink-0">
                                     <span className="absolute left-1/2 -translate-x-1/2">Now Playing</span>
@@ -190,17 +251,17 @@ export default function SongPlayer() {
 
                                 {/* Large Album Art */}
                                 <motion.div
-                                    layoutId="album-art"
-                                    className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-2xl border border-white/10 shrink-0"
+                                    layoutId={shouldReduceMotion ? undefined : "album-art"}
+                                    className="relative size-[clamp(9rem,28svh,16rem)] rounded-2xl overflow-hidden shadow-2xl border border-white/10 shrink-0"
                                     style={{ boxShadow: "0 20px 50px -12px rgba(0, 0, 0, 0.5)" }}
                                 >
                                     <Image src={currentSong.image} alt={currentSong.title} fill className="object-cover" />
                                 </motion.div>
 
                                 {/* Song Info */}
-                                <motion.div layoutId="song-info" className="space-y-2 flex flex-col items-center">
-                                    <h2 className="text-2xl font-bold text-white">{currentSong.title}</h2>
-                                    <p className="text-lg text-white/70">{currentSong.artist}</p>
+                                <motion.div layoutId={shouldReduceMotion ? undefined : "song-info"} className="space-y-1.5 flex flex-col items-center">
+                                    <h2 className="text-[clamp(1.25rem,3svh,1.5rem)] font-bold text-white">{currentSong.title}</h2>
+                                    <p className="text-[clamp(0.95rem,2.2svh,1.125rem)] text-white/70">{currentSong.artist}</p>
                                 </motion.div>
 
                                 {/* Scrubber */}
@@ -210,7 +271,7 @@ export default function SongPlayer() {
                                         onClick={handleSeek}
                                     >
                                         <motion.div
-                                            layoutId="progress-bar"
+                                            layoutId={shouldReduceMotion ? undefined : "progress-bar"}
                                             className="absolute top-0 left-0 h-full bg-white rounded-full group-hover:bg-white/80 transition-colors"
                                             style={{ width: `${progress}%` }}
                                         >
@@ -224,7 +285,7 @@ export default function SongPlayer() {
                                 </div>
 
                                 {/* Main Controls */}
-                                <div className="grid grid-cols-3 items-center w-full max-w-[320px] mx-auto">
+                                <div className="grid grid-cols-3 items-center w-full max-w-[min(20rem,88vw)] mx-auto">
                                     {/* Prev Button & About */}
                                     <div className="flex justify-end items-center gap-4">
                                         <a
@@ -272,7 +333,7 @@ export default function SongPlayer() {
                                                             value={isMuted ? 0 : volume}
                                                             onChange={(e) => setVolume(parseFloat(e.target.value))}
                                                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                                                            style={{ writingMode: 'vertical-lr', direction: 'rtl' } as any}
+                                                            style={verticalSliderStyle}
                                                         />
                                                     </div>
                                                 </div>
@@ -301,10 +362,11 @@ export default function SongPlayer() {
                         onClick={() => setShowSongList(false)}
                     >
                         <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            className="relative w-full max-w-md bg-card border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
+                            initial={shouldReduceMotion ? { opacity: 0 } : { scale: 0.96, opacity: 0 }}
+                            animate={shouldReduceMotion ? { opacity: 1 } : { scale: 1, opacity: 1 }}
+                            exit={shouldReduceMotion ? { opacity: 0 } : { scale: 0.96, opacity: 0 }}
+                            transition={overlayTransition}
+                            className="relative w-[min(92vw,28rem)] bg-card border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[min(80svh,42rem)]"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Header */}
@@ -335,9 +397,9 @@ export default function SongPlayer() {
                                             <div className={`absolute inset-0 flex items-center justify-center bg-black/40 ${currentSong.id === song.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity`}>
                                                 {currentSong.id === song.id && isPlaying ? (
                                                     <div className="flex gap-0.5 items-end h-3">
-                                                        <motion.div animate={{ height: [3, 12, 6, 12, 3] }} transition={{ repeat: Infinity, duration: 1 }} className="w-0.5 bg-white rounded-full" />
-                                                        <motion.div animate={{ height: [6, 3, 12, 3, 6] }} transition={{ repeat: Infinity, duration: 1 }} className="w-0.5 bg-white rounded-full" />
-                                                        <motion.div animate={{ height: [12, 6, 3, 6, 12] }} transition={{ repeat: Infinity, duration: 1 }} className="w-0.5 bg-white rounded-full" />
+                                                        <motion.div animate={shouldReduceMotion ? { height: 8 } : { height: [3, 12, 6, 12, 3] }} transition={shouldReduceMotion ? { duration: 0 } : { repeat: Infinity, duration: 1 }} className="w-0.5 bg-white rounded-full" />
+                                                        <motion.div animate={shouldReduceMotion ? { height: 8 } : { height: [6, 3, 12, 3, 6] }} transition={shouldReduceMotion ? { duration: 0 } : { repeat: Infinity, duration: 1 }} className="w-0.5 bg-white rounded-full" />
+                                                        <motion.div animate={shouldReduceMotion ? { height: 8 } : { height: [12, 6, 3, 6, 12] }} transition={shouldReduceMotion ? { duration: 0 } : { repeat: Infinity, duration: 1 }} className="w-0.5 bg-white rounded-full" />
                                                     </div>
                                                 ) : (
                                                     <FiPlay className="text-white fill-white" size={16} />

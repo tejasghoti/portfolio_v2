@@ -20,6 +20,24 @@
         },
         {
             "id": "ach_003",
+            "type": "certificate",
+            "title": "Neural Networks and Deep Learning",
+            "issuer": "DeepLearning.AI / Coursera",
+            "date": "2025",
+            "image_url": "/static/achievements/neural-networks-and-deep-learning.png",
+            "credential_link": "https://www.coursera.org/account/accomplishments/verify/CUI78V4E31FS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+        },
+        {
+            "id": "ach_004",
+            "type": "certificate",
+            "title": "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+            "issuer": "DeepLearning.AI / Coursera",
+            "date": "2025",
+            "image_url": "/static/achievements/improving-deep-neural-networks.png",
+            "credential_link": "https://coursera.org/share/afe983868b617a55a5cf5278078e8d2e"
+        },
+        {
+            "id": "ach_005",
             "type": "contribution",
             "title": "OWASP-BLT Contribution",
             "issuer": "OWASP",

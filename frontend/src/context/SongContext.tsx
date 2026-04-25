@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useRef } from "react";
+import React, { createContext, useCallback, useContext, useState, useEffect, useRef } from "react";
 
 export type Song = {
     id: string;
@@ -106,11 +106,17 @@ export function SongProvider({ children }: { children: React.ReactNode }) {
 
     const currentSong = songs[currentIndex];
 
+    const playNext = useCallback(() => {
+        setCurrentIndex((prev) => (prev + 1) % songs.length);
+        setIsPlaying(true);
+    }, []);
+
     useEffect(() => {
-        setIsInitialized(true);
+        const initTimer = setTimeout(() => setIsInitialized(true), 0);
 
         // Cleanup function for the audio element when the component unmounts
         return () => {
+            clearTimeout(initTimer);
             if (audioRef.current) {
                 audioRef.current.pause();
                 audioRef.current = null;
@@ -150,7 +156,7 @@ export function SongProvider({ children }: { children: React.ReactNode }) {
                 audioRef.current.play().catch(e => console.log("Playback failed", e));
             }
         }
-    }, [currentIndex]); // Rerun when currentIndex changes
+    }, [currentIndex, isPlaying, playNext]); // Rerun when currentIndex changes
 
     // Handle Play/Pause
     useEffect(() => {
@@ -197,11 +203,6 @@ export function SongProvider({ children }: { children: React.ReactNode }) {
             audioRef.current.currentTime = time;
             setCurrentTime(time);
         }
-    };
-
-    const playNext = () => {
-        setCurrentIndex((prev) => (prev + 1) % songs.length);
-        setIsPlaying(true);
     };
 
     const playPrev = () => {
