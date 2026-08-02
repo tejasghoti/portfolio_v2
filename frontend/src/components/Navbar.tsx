@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -23,23 +22,19 @@ export default function Navbar() {
         const handleScroll = () => {
             const sections = navItems.map((item) => item.path.replace("/#", ""));
 
-            // Find the current section
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
                     const rect = element.getBoundingClientRect();
-                    // If the top of the section is within the viewport (with some offset for navbar)
-                    // or if we've scrolled past it but are still inside it
                     if (rect.top <= 150 && rect.bottom >= 150) {
                         setActiveSection(section);
-                        break; // Found the top-most visible section
+                        break;
                     }
                 }
             }
         };
 
         window.addEventListener("scroll", handleScroll);
-        // Trigger once on mount to set initial state
         handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
@@ -63,18 +58,16 @@ export default function Navbar() {
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <Link
                     href="/"
-                    className="flex size-10 items-center justify-center rounded-full transition-transform hover:scale-105"
+                    className="flex items-center gap-2.5 transition-transform hover:scale-105 group"
                     aria-label="Go to home"
                     onClick={(e) => scrollToSection(e, 'home')}
                 >
-                    <Image
-                        src="/favicon-package/web-app-manifest-192x192.png"
-                        alt=""
-                        width={40}
-                        height={40}
-                        priority
-                        className="size-10 rounded-full"
-                    />
+                    <div className="size-9 rounded-xl bg-primary/10 border border-primary/40 flex items-center justify-center font-mono font-extrabold text-xl text-primary shadow-lg shadow-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                        T
+                    </div>
+                    <span className="font-bold tracking-tight text-base font-mono hidden sm:inline-block">
+                        tejas<span className="text-primary">.ghoti</span>
+                    </span>
                 </Link>
 
                 <div className="flex items-center gap-6">

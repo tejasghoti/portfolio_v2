@@ -1,50 +1,124 @@
 {
     "achievements": [
         {
-            "id": "ach_001",
+            "id": "cert_coursera_001",
             "type": "certificate",
             "title": "Supervised Machine Learning: Regression and Classification",
-            "issuer": "Andrew Ng / Coursera",
-            "date": "2025-01-15",
+            "issuer": "Andrew Ng / Stanford University / Coursera",
+            "date": "2025",
             "image_url": "/static/achievements/ml-cert1.jpeg",
-            "credential_link": "https://coursera.org/share/f24cad83b3af0622f2c614617c36642c"
+            "credential_link": "https://coursera.org/share/f24cad83b3af0622f2c614617c36642c",
+            "description": "Mastered fundamental machine learning concepts, linear/logistic regression, loss functions, gradient descent, and regularization."
         },
         {
-            "id": "ach_002",
+            "id": "cert_coursera_002",
             "type": "certificate",
             "title": "Advanced Learning Algorithms",
-            "issuer": "Andrew Ng / Coursera",
-            "date": "2025-02-10",
+            "issuer": "Andrew Ng / Stanford University / Coursera",
+            "date": "2025",
             "image_url": "/static/achievements/ml-cert2.jpeg",
-            "credential_link": "https://coursera.org/share/e4f060c096fb887523d80371382fcbf9"
+            "credential_link": "https://coursera.org/share/e4f060c096fb887523d80371382fcbf9",
+            "description": "Engineered neural networks using TensorFlow, multiclass classification, decision trees, random forests, and boosted trees."
         },
         {
-            "id": "ach_003",
+            "id": "cert_coursera_003",
             "type": "certificate",
             "title": "Neural Networks and Deep Learning",
             "issuer": "DeepLearning.AI / Coursera",
             "date": "2025",
             "image_url": "/static/achievements/neural-networks-and-deep-learning.png",
-            "credential_link": "https://www.coursera.org/account/accomplishments/verify/CUI78V4E31FS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+            "credential_link": "https://www.coursera.org/account/accomplishments/verify/CUI78V4E31FS",
+            "description": "Built deep neural networks from scratch in Vectorized Python, implementing forward/backward propagation and activation functions."
         },
         {
-            "id": "ach_004",
+            "id": "cert_coursera_004",
             "type": "certificate",
-            "title": "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+            "title": "Improving Deep Neural Networks: Hyperparameter Tuning & Regularization",
             "issuer": "DeepLearning.AI / Coursera",
             "date": "2025",
             "image_url": "/static/achievements/improving-deep-neural-networks.png",
-            "credential_link": "https://coursera.org/share/afe983868b617a55a5cf5278078e8d2e"
+            "credential_link": "https://coursera.org/share/afe983868b617a55a5cf5278078e8d2e",
+            "description": "Implemented L2 regularization, Dropout, RMSprop, Adam optimization, and Batch Normalization for scalable deep learning."
         },
         {
-            "id": "ach_005",
-            "type": "contribution",
-            "title": "OWASP-BLT Contribution",
-            "issuer": "OWASP",
-            "date": "2025-03-01",
-            "image_url": "/static/achievements/os-contribution.jpeg",
-            "credential_link": "https://github.com/OWASP-BLT/BLT/pull/4629",
-            "description": "Merged PR to OWASP-BLT: Fixed badges issue in Django-Python backend."
+            "id": "cert_001",
+            "type": "certificate",
+            "title": "Claude 101 - Anthropic Certificate of Completion",
+            "issuer": "Anthropic",
+            "date": "2026",
+            "image_url": "/static/certificates/claude-101.png",
+            "credential_link": null,
+            "description": "Completed Anthropic's Claude 101 certification covering prompt engineering, tool use, and Claude LLM architectures."
+        },
+        {
+            "id": "cert_002",
+            "type": "certificate",
+            "title": "INNOVATION 2026 / Equinox Award",
+            "issuer": "MKSSS's Cummins College of Engineering, Pune",
+            "date": "April 2026",
+            "image_url": "/static/certificates/innovation-2026.png",
+            "credential_link": null,
+            "description": "Awarded Certificate of Participation during INNOVATION 2026 powered by Amdocs, Cummins, BNY, and Boeing."
+        },
+        {
+            "id": "cert_003",
+            "type": "certificate",
+            "title": "Atos Srijan 2025 - Culture of Innovation",
+            "issuer": "Atos Global IT Solutions and Services",
+            "date": "2025",
+            "image_url": "/static/certificates/atos-srijan-2025.jpg",
+            "credential_link": null,
+            "description": "Certified for participating in Atos Srijan 2025 – Upholding a Culture of Innovation."
+        },
+        {
+            "id": "cert_004",
+            "type": "certificate",
+            "title": "LCAT - Internship Common Aptitude Test",
+            "issuer": "Labmentix",
+            "date": "September 2025",
+            "image_url": "/static/certificates/lcat-aptitude.png",
+            "credential_link": null,
+            "description": "Earned Certificate of Participation for high performance in the Labmentix Common Aptitude Test (LCAT)."
+        },
+        {
+            "id": "ach_001",
+            "type": "hackathon",
+            "title": "2X Hackathon Winner: XENIA'26 & Williams-Sonoma Hackathon",
+            "issuer": "PICT / Williams-Sonoma / Cummins",
+            "date": "2026",
+            "image_url": null,
+            "credential_link": null,
+            "description": "Secured 1st Place at XENIA'26 and 1st Place at Williams-Sonoma Hackathon by building scale0; 2nd Runner-Up at Cummins Software Hackathon 2026."
+        },
+        {
+            "id": "ach_002",
+            "type": "leadership",
+            "title": "PICT ACM – Marketing Head & Event Lead",
+            "issuer": "PICT ACM Student Chapter",
+            "date": "2024-2026",
+            "image_url": null,
+            "credential_link": null,
+            "description": "Secured corporate sponsorships and scaled Pulzion tech festival participation to 6,500+ students."
+        },
+        {
+            "id": "ach_003",
+            "type": "leadership",
+            "title": "Electoral Literacy Club – Team Lead",
+            "issuer": "Election Commission of India",
+            "date": "2024-2025",
+            "image_url": null,
+            "credential_link": null,
+            "description": "Orchestrated civic drives; led team to be officially recognized as the Best ELC in Maharashtra."
+        },
+        {
+            "id": "ach_004",
+            "type": "achievement",
+            "title": "Competitive Programming & Problem Solving",
+            "issuer": "LeetCode / CodeChef / Codeforces",
+            "date": "Ongoing",
+            "image_url": "https://leetcode.com/u/tejasghoti/",
+            "credential_link": "https://leetcode.com/u/tejasghoti/",
+            "description": "LeetCode: 1550 Rating | CodeChef: 1466 Rating | Codeforces: 900 Rating. Solved 1,500+ algorithmic challenges."
         }
     ]
 }

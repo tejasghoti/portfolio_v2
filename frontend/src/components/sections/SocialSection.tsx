@@ -2,45 +2,44 @@
 
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
-import { SiKaggle } from "react-icons/si";
+import { SiLeetcode, SiCodechef } from "react-icons/si";
 
 const socials = [
     {
         name: "GitHub",
-        handle: "@Yajush-afk",
-        link: "https://github.com/Yajush-afk",
+        handle: "@tejasghoti",
+        link: "https://github.com/tejasghoti",
         icon: FiGithub,
         color: "hover:text-foreground",
-        desc: "Code Repository",
-        status: "Systems Normal"
+        desc: "Code Repositories",
+        status: "Active Contributor"
     },
     {
         name: "LinkedIn",
-        handle: "Yajush Srivastava",
-        link: "https://www.linkedin.com/in/yajush-sri/",
+        handle: "Tejas Ghoti",
+        link: "https://www.linkedin.com/in/tejas-ghoti-911rs/",
         icon: FiLinkedin,
         color: "hover:text-blue-600",
         desc: "Professional Network",
-        status: "Open for Connections"
+        status: "Open to 2026 Roles"
     },
     {
-        name: "X (Twitter)",
-        handle: "@Yajush_who",
-        link: "https://x.com/Yajush_who",
-        icon: FaXTwitter,
-        color: "hover:text-sky-400",
-        desc: "Transmission Stream",
-        status: "Broadcasting"
+        name: "LeetCode",
+        handle: "1550 Rating (300+ Solved)",
+        link: "https://leetcode.com/u/tejasghoti/",
+        icon: SiLeetcode,
+        color: "hover:text-amber-500",
+        desc: "Algorithms & Data Structures",
+        status: "Solving Daily"
     },
     {
-        name: "Kaggle",
-        handle: "@yajushsrivastava",
-        link: "https://www.kaggle.com/yajushsrivastava",
-        icon: SiKaggle,
-        color: "hover:text-blue-500",
-        desc: "Data Science Experiments",
-        status: "Training Models"
+        name: "CodeChef",
+        handle: "1466 Rating",
+        link: "https://www.codechef.com/users/tejasghoti",
+        icon: SiCodechef,
+        color: "hover:text-amber-700",
+        desc: "Competitive Contests",
+        status: "Active Contestant"
     }
 ];
 
@@ -55,10 +54,10 @@ export default function SocialSection() {
                 className="space-y-4 mb-12 text-center"
             >
                 <h2 className="text-3xl font-bold inline-flex items-center gap-3">
-                    Socials
+                    Connect &amp; Collaborate
                 </h2>
-                <p className="text-muted-foreground">
-                    Connect with me across the digital universe.
+                <p className="text-muted-foreground max-w-xl mx-auto text-sm">
+                    Reach out across professional channels or explore my open-source code repositories.
                 </p>
             </motion.div>
 
@@ -84,7 +83,7 @@ export default function SocialSection() {
                                 </div>
                                 <div className="space-y-1 text-left">
                                     <div className="flex flex-wrap items-center gap-3">
-                                        <h2 className="text-xl font-bold">{social.name}</h2>
+                                        <h3 className="text-xl font-bold">{social.name}</h3>
                                         <span className="text-xs px-2 py-0.5 rounded-full bg-secondary text-muted-foreground border border-border/50 flex items-center gap-1">
                                             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                                             {social.status}
@@ -108,19 +107,21 @@ export default function SocialSection() {
                 className="mt-12 p-8 backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl text-center space-y-6 max-w-2xl mx-auto w-full shadow-xl"
             >
                 <div className="space-y-2">
-                    <h3 className="text-2xl font-bold">Ready to Collaborate?</h3>
-                    <p className="text-muted-foreground">
-                        I&apos;m always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+                    <h3 className="text-2xl font-bold">Let&apos;s Build Something Impactful.</h3>
+                    <p className="text-muted-foreground text-sm">
+                        Whether it&apos;s architecting autonomous LLM pipelines, scaling backend infrastructure, or exploring decentralized networks, I&apos;m always open to discussing new technical challenges.
                     </p>
                 </div>
 
-                <a
-                    href="mailto:yajush24606@gmail.com"
-                    className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-transform hover:scale-105 shadow-lg shadow-primary/20 max-w-full overflow-hidden"
-                >
-                    <FiMail className="shrink-0" />
-                    <span className="truncate text-sm md:text-lg">yajush24606@gmail.com</span>
-                </a>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                        href="mailto:tejasghoti@gmail.com"
+                        className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-transform hover:scale-105 shadow-lg shadow-primary/20 max-w-full overflow-hidden"
+                    >
+                        <FiMail className="shrink-0" />
+                        <span className="truncate text-sm md:text-lg">tejasghoti@gmail.com</span>
+                    </a>
+                </div>
             </motion.div>
         </section>
     );

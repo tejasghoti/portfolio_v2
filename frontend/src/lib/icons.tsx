@@ -1,13 +1,16 @@
 import {
-    SiHtml5, SiCss3, SiPython, SiCplusplus, SiFastapi, SiDjango, SiFlask,
+    SiHtml5, SiCss3, SiPython, SiCplusplus, SiC, SiFastapi, SiDjango, SiFlask,
     SiMysql, SiPostgresql, SiScikitlearn, SiTensorflow, SiPytorch,
     SiKaggle, SiGooglecolab, SiUbuntu, SiBrave, SiSpotify, SiGithub,
     SiNextdotjs, SiReact, SiTailwindcss, SiTypescript, SiFramer,
     SiNumpy, SiPandas, SiScipy, SiJavascript, SiPydantic,
-    SiGooglegemini, SiOpenai, SiMeta
+    SiGooglegemini, SiOpenai, SiMeta, SiKubernetes, SiDocker,
+    SiMongodb, SiRedis, SiAmazonwebservices, SiLangchain, SiOpencv,
+    SiNodedotjs, SiExpress, SiRabbitmq, SiCloudflare, SiNginx, SiFirebase,
+    SiAnthropic
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { FiCpu, FiSearch } from "react-icons/fi";
+import { FiCpu, FiSearch, FiShield, FiDatabase, FiServer, FiLayers } from "react-icons/fi";
 import { IconType } from "react-icons";
 
 export const techStackIcons: Record<string, IconType> = {
@@ -16,6 +19,7 @@ export const techStackIcons: Record<string, IconType> = {
     "CSS": SiCss3,
     "CSS3": SiCss3,
     "Python": SiPython,
+    "C": SiC,
     "C++": SiCplusplus,
     "FastAPI": SiFastapi,
     "Django": SiDjango,
@@ -23,6 +27,8 @@ export const techStackIcons: Record<string, IconType> = {
     "MySQL": SiMysql,
     "PostgreSQL": SiPostgresql,
     "Postgres": SiPostgresql,
+    "MongoDB": SiMongodb,
+    "Redis": SiRedis,
     "Scikit-learn": SiScikitlearn,
     "TensorFlow": SiTensorflow,
     "PyTorch": SiPytorch,
@@ -45,12 +51,34 @@ export const techStackIcons: Record<string, IconType> = {
     "Scipy": SiScipy,
     "JS": SiJavascript,
     "JavaScript": SiJavascript,
+    "SQL": SiMysql,
     "Pydantic": SiPydantic,
-    "Groq API": FiCpu,
-    "Llama 3.3 70B": SiMeta,
-    "Llama 3.1 8B": SiMeta,
-    "Google Gemini 2.5 Flash": SiGooglegemini,
-    "OpenAI": SiOpenai
+    "Kubernetes": SiKubernetes,
+    "Docker": SiDocker,
+    "AWS": SiAmazonwebservices,
+    "LangGraph": SiLangchain,
+    "LangChain": SiLangchain,
+    "Claude 3.5 Sonnet": SiAnthropic,
+    "Aider": FiCpu,
+    "MCP": FiServer,
+    "OpenCV": SiOpencv,
+    "YOLOv5": FiCpu,
+    "Tesseract OCR": FiSearch,
+    "spaCy": FiCpu,
+    "Microsoft Presidio": FiShield,
+    "NER": FiSearch,
+    "Privacy-Preserving AI": FiShield,
+    "RAG": FiLayers,
+    "Vector Search": FiSearch,
+    "Vector Retrieval": FiSearch,
+    "LLMs": FiCpu,
+    "NLP": FiSearch,
+    "Node.js": SiNodedotjs,
+    "Express": SiExpress,
+    "NGINX": SiNginx,
+    "Cloudflare CDN": SiCloudflare,
+    "RabbitMQ": SiRabbitmq,
+    "Firebase": SiFirebase
 };
 
 export const techStackUrls: Record<string, string> = {
@@ -59,6 +87,7 @@ export const techStackUrls: Record<string, string> = {
     "CSS": "https://developer.mozilla.org/en-US/docs/Web/CSS",
     "CSS3": "https://developer.mozilla.org/en-US/docs/Web/CSS",
     "Python": "https://www.python.org/",
+    "C": "https://en.cppreference.com/w/c",
     "C++": "https://isocpp.org/",
     "FastAPI": "https://fastapi.tiangolo.com/",
     "Django": "https://www.djangoproject.com/",
@@ -66,6 +95,8 @@ export const techStackUrls: Record<string, string> = {
     "MySQL": "https://www.mysql.com/",
     "PostgreSQL": "https://www.postgresql.org/",
     "Postgres": "https://www.postgresql.org/",
+    "MongoDB": "https://www.mongodb.com/",
+    "Redis": "https://redis.io/",
     "Scikit-learn": "https://scikit-learn.org/",
     "TensorFlow": "https://www.tensorflow.org/",
     "PyTorch": "https://pytorch.org/",
@@ -89,51 +120,49 @@ export const techStackUrls: Record<string, string> = {
     "JS": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     "JavaScript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     "Pydantic": "https://docs.pydantic.dev/",
-    "Groq API": "https://groq.com/",
-    "Llama 3.3 70B": "https://www.llama.com/",
-    "Llama 3.1 8B": "https://www.llama.com/",
-    "Google Gemini 2.5 Flash": "https://ai.google.dev/gemini-api/docs/models",
-    "OpenAI": "https://openai.com/"
+    "Kubernetes": "https://kubernetes.io/",
+    "Docker": "https://www.docker.com/",
+    "AWS": "https://aws.amazon.com/",
+    "LangGraph": "https://www.langchain.com/langgraph",
+    "LangChain": "https://www.langchain.com/",
+    "OpenCV": "https://opencv.org/",
+    "Node.js": "https://nodejs.org/",
+    "Firebase": "https://firebase.google.com/",
+    "Cloudflare CDN": "https://www.cloudflare.com/",
+    "RabbitMQ": "https://www.rabbitmq.com/"
 };
 
 export const techStackData = [
     {
-        category: "Frontend", items: [
-            { name: "HTML5", icon: SiHtml5, url: "https://developer.mozilla.org/en-US/docs/Web/HTML", color: "hover:text-orange-500" },
-            { name: "CSS3", icon: SiCss3, url: "https://developer.mozilla.org/en-US/docs/Web/CSS", color: "hover:text-blue-500" }
-        ]
-    },
-    {
-        category: "Backend", items: [
+        category: "Languages", items: [
             { name: "Python", icon: SiPython, url: "https://www.python.org/", color: "hover:text-yellow-400" },
-            { name: "C++", icon: SiCplusplus, url: "https://isocpp.org/", color: "hover:text-blue-600" }
+            { name: "C++", icon: SiCplusplus, url: "https://isocpp.org/", color: "hover:text-blue-600" },
+            { name: "C", icon: SiC, url: "https://en.cppreference.com/w/c", color: "hover:text-blue-400" },
+            { name: "JavaScript", icon: SiJavascript, url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "hover:text-yellow-300" }
         ]
     },
     {
-        category: "Frameworks", items: [
+        category: "AI / ML & Vision", items: [
+            { name: "LangChain", icon: SiLangchain, url: "https://www.langchain.com/", color: "hover:text-emerald-400" },
+            { name: "PyTorch", icon: SiPytorch, url: "https://pytorch.org/", color: "hover:text-red-500" },
+            { name: "OpenCV", icon: SiOpencv, url: "https://opencv.org/", color: "hover:text-green-500" },
+            { name: "Scikit-learn", icon: SiScikitlearn, url: "https://scikit-learn.org/", color: "hover:text-orange-400" }
+        ]
+    },
+    {
+        category: "Backend & Systems", items: [
             { name: "FastAPI", icon: SiFastapi, url: "https://fastapi.tiangolo.com/", color: "hover:text-teal-400" },
-            { name: "Django", icon: SiDjango, url: "https://www.djangoproject.com/", color: "hover:text-green-600" },
-            { name: "Flask", icon: SiFlask, url: "https://flask.palletsprojects.com/", color: "hover:text-gray-400" }
+            { name: "Node.js", icon: SiNodedotjs, url: "https://nodejs.org/", color: "hover:text-green-600" },
+            { name: "PostgreSQL", icon: SiPostgresql, url: "https://www.postgresql.org/", color: "hover:text-blue-300" },
+            { name: "Redis", icon: SiRedis, url: "https://redis.io/", color: "hover:text-red-600" }
         ]
     },
     {
-        category: "Database", items: [
-            { name: "MySQL", icon: SiMysql, url: "https://www.mysql.com/", color: "hover:text-blue-400" },
-            { name: "PostgreSQL", icon: SiPostgresql, url: "https://www.postgresql.org/", color: "hover:text-blue-300" }
-        ]
-    },
-    {
-        category: "Data Science", items: [
-            { name: "Scikit-learn", icon: SiScikitlearn, url: "https://scikit-learn.org/", color: "hover:text-orange-400" },
-            { name: "TensorFlow", icon: SiTensorflow, url: "https://www.tensorflow.org/", color: "hover:text-orange-500" },
-            { name: "PyTorch", icon: SiPytorch, url: "https://pytorch.org/", color: "hover:text-red-500" }
-        ]
-    },
-    {
-        category: "Platforms", items: [
-            { name: "VS Code", icon: VscVscode, url: "https://code.visualstudio.com/", color: "hover:text-blue-500" },
-            { name: "Kaggle", icon: SiKaggle, url: "https://www.kaggle.com/", color: "hover:text-blue-400" },
-            { name: "Colab", icon: SiGooglecolab, url: "https://colab.research.google.com/", color: "hover:text-orange-400" }
+        category: "DevOps & Cloud", items: [
+            { name: "Docker", icon: SiDocker, url: "https://www.docker.com/", color: "hover:text-blue-400" },
+            { name: "Kubernetes", icon: SiKubernetes, url: "https://kubernetes.io/", color: "hover:text-blue-500" },
+            { name: "AWS", icon: SiAmazonwebservices, url: "https://aws.amazon.com/", color: "hover:text-orange-500" },
+            { name: "MongoDB", icon: SiMongodb, url: "https://www.mongodb.com/", color: "hover:text-green-500" }
         ]
     }
 ];
@@ -141,8 +170,8 @@ export const techStackData = [
 export const toolkitData = [
     { name: "VS Code", icon: VscVscode, url: "https://code.visualstudio.com/", color: "text-blue-500" },
     { name: "Terminal", icon: SiUbuntu, url: "https://ubuntu.com/", color: "text-orange-500" },
-    { name: "Brave", icon: SiBrave, url: "https://brave.com/", color: "text-orange-600" },
-    { name: "Spotify", icon: SiSpotify, url: "https://open.spotify.com/", color: "text-green-500" },
-    { name: "Perplexity", icon: FiSearch, url: "https://www.perplexity.ai/", color: "text-teal-400" },
+    { name: "Docker", icon: SiDocker, url: "https://www.docker.com/", color: "text-blue-400" },
+    { name: "Kubernetes", icon: SiKubernetes, url: "https://kubernetes.io/", color: "text-blue-500" },
+    { name: "AWS", icon: SiAmazonwebservices, url: "https://aws.amazon.com/", color: "text-orange-500" },
     { name: "GitHub", icon: SiGithub, url: "https://github.com/", color: "text-foreground" }
 ];

@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Gochi_Hand } from "next/font/google";
+import { Inter, Caveat, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { SongProvider } from "@/context/SongContext";
 import SongPlayer from "@/components/SongPlayer";
 
-const inter = Inter({ subsets: ["latin"] });
-const gochiHand = Gochi_Hand({ subsets: ["latin"], weight: "400", variable: "--font-gochi" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const caveat = Caveat({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-caveat" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" });
 
 export const metadata: Metadata = {
-  title: "Yajush Srivastava | Portfolio",
-  description: "Computer Science Student & Developer",
+  title: "Tejas Ghoti | Portfolio",
+  description: "AI Full Stack Engineer | B.E. Information Technology (Honors in Cybersecurity) @ PICT Pune",
   icons: {
     icon: [
-      { url: "/favicon-package/web-app-manifest-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/favicon-package/web-app-manifest-512x512.png", sizes: "512x512", type: "image/png" },
-      { url: "/static/favicon.png", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png" },
     ],
-    apple: "/favicon-package/web-app-manifest-192x192.png",
+    apple: "/favicon.png",
   },
 };
 
@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} ${gochiHand.variable}`}>
+      <body className={`${inter.className} ${caveat.variable} ${spaceGrotesk.variable}`}>
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -17,6 +17,7 @@ export interface Project {
     demo_link: string | null;
     image_url: string | null;
     status: "deployed" | "built" | "building";
+    is_featured?: boolean;
 }
 
 export interface Achievement {
