@@ -26,7 +26,7 @@ const socials = [
     {
         name: "LeetCode",
         handle: "1550 Rating (300+ Solved)",
-        link: "https://leetcode.com/u/tejasghoti/",
+        link: "https://leetcode.com/u/iam_vengeance/",
         icon: SiLeetcode,
         color: "hover:text-amber-500",
         desc: "Algorithms & Data Structures",

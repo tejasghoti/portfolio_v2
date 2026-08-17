@@ -30,8 +30,8 @@ export default function ProjectsSection() {
     
     const [activeTab, setActiveTab] = useState<"flagship" | "archive">("flagship");
 
-    const flagshipProjects = allProjects.filter((p) => p.is_featured);
-    const archiveProjects = allProjects.filter((p) => !p.is_featured);
+    const flagshipProjects = allProjects.filter((p) => p.status === "deployed");
+    const archiveProjects = allProjects.filter((p) => p.status !== "deployed");
 
     const activeList = activeTab === "flagship" ? flagshipProjects : archiveProjects;
 
@@ -59,7 +59,7 @@ export default function ProjectsSection() {
                 className="space-y-4 mb-8 text-center"
             >
                 <h2 className="text-3xl font-bold">
-                    Featured Work &amp; Project Archive
+                    Deployed Projects &amp; Project Archive
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                     Prioritized AI/ML engineering, high-concurrency microservices, and decentralized architectures.
@@ -78,7 +78,7 @@ export default function ProjectsSection() {
                                 : "bg-secondary/70 text-muted-foreground hover:bg-secondary hover:text-foreground"
                         }`}
                     >
-                        <FiLayers /> Flagship Systems ({flagshipProjects.length})
+                        <FiLayers /> Deployed Projects ({flagshipProjects.length})
                     </button>
                     <button
                         onClick={() => {
@@ -91,7 +91,7 @@ export default function ProjectsSection() {
                                 : "bg-secondary/70 text-muted-foreground hover:bg-secondary hover:text-foreground"
                         }`}
                     >
-                        <FiArchive /> Project Archive ({archiveProjects.length})
+                        <FiArchive /> Other Projects ({archiveProjects.length})
                     </button>
                 </div>
             </motion.div>

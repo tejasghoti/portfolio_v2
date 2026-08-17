@@ -74,7 +74,7 @@
     },
     {
       "id": "eduniti",
-      "title": "EDUNITI \u2013 Scalable Learning Platform",
+      "title": "EDUNITI – Scalable Learning Platform",
       "description": "Scalable Learning Platform for High Traffic Events built with Kubernetes auto-scaling (1->8 worker replicas) and RabbitMQ submission queue handling 20,000+ exam submissions at 634 req/sec. Winner at XENIA 26.",
       "tech_stack": [
         "Kubernetes",
@@ -218,7 +218,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://trix-nu.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/trix.png",
       "status": "deployed",
       "is_featured": true
     },
@@ -233,7 +233,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://goa-hacker-housev1.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/goa-hacker-house.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -248,7 +248,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://prepsquad.lovable.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/prepsquad.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -263,7 +263,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://vaultis.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/vaultis.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -278,7 +278,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://eventhub-sparkle-fest.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/eventhub.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -293,7 +293,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://agri-mitra-v2-6gs8.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/agri-mitra.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -308,7 +308,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://vahaan-travrs-v2.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/vahaan.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -323,7 +323,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://gate-27-v1.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/gate-27.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -336,7 +336,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://tejasghoti1v1.framer.website/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/portfolio-v1.png",
       "status": "deployed",
       "is_featured": false
     },
@@ -351,7 +351,7 @@
       ],
       "github_link": "https://github.com/tejasghoti",
       "demo_link": "https://tejasghotiv2-aak1p7dck-tejas-projects-00bf5e93.vercel.app/",
-      "image_url": "/projects/stay-tuned.png",
+      "image_url": "/projects/portfolio-v2.png",
       "status": "deployed",
       "is_featured": false
     }

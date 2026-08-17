@@ -6,8 +6,8 @@
             "title": "Supervised Machine Learning: Regression and Classification",
             "issuer": "Andrew Ng / Stanford University / Coursera",
             "date": "2025",
-            "image_url": "/static/achievements/ml-cert1.jpeg",
-            "credential_link": "https://coursera.org/share/f24cad83b3af0622f2c614617c36642c",
+            "image_url": "/static/certificates/coursera-001.png",
+            "credential_link": "https://coursera.org/verify/0DKGQL4HN2PL",
             "description": "Mastered fundamental machine learning concepts, linear/logistic regression, loss functions, gradient descent, and regularization."
         },
         {
@@ -16,19 +16,29 @@
             "title": "Advanced Learning Algorithms",
             "issuer": "Andrew Ng / Stanford University / Coursera",
             "date": "2025",
-            "image_url": "/static/achievements/ml-cert2.jpeg",
-            "credential_link": "https://coursera.org/share/e4f060c096fb887523d80371382fcbf9",
+            "image_url": "/static/certificates/coursera-002.png",
+            "credential_link": "https://coursera.org/verify/I548XKPU9T88",
             "description": "Engineered neural networks using TensorFlow, multiclass classification, decision trees, random forests, and boosted trees."
         },
         {
             "id": "cert_coursera_003",
             "type": "certificate",
-            "title": "Neural Networks and Deep Learning",
+            "title": "Unsupervised Learning, Recommenders, Reinforcement Learning",
             "issuer": "DeepLearning.AI / Coursera",
             "date": "2025",
-            "image_url": "/static/achievements/neural-networks-and-deep-learning.png",
-            "credential_link": "https://www.coursera.org/account/accomplishments/verify/CUI78V4E31FS",
+            "image_url": "/static/certificates/coursera-003.png",
+            "credential_link": "https://coursera.org/verify/GR0NHODP9989",
             "description": "Built deep neural networks from scratch in Vectorized Python, implementing forward/backward propagation and activation functions."
+        },
+        {
+            "id": "cert_aws_001",
+            "type": "certificate",
+            "title": "AWS Cloud Fundamentals Bootcamp",
+            "issuer": "AWS Cloud Club at PICT",
+            "date": "2025",
+            "image_url": "/static/certificates/aws-cloud.png",
+            "credential_link": null,
+            "description": "Outstanding achievement at Get Certified: AWS Cloud Fundamentals Bootcamp."
         },
         {
             "id": "cert_coursera_004",
@@ -68,7 +78,7 @@
             "date": "2025",
             "image_url": "/static/certificates/atos-srijan-2025.jpg",
             "credential_link": null,
-            "description": "Certified for participating in Atos Srijan 2025 – Upholding a Culture of Innovation."
+            "description": "Certified for participating in Atos Srijan 2025 \u2013 Upholding a Culture of Innovation."
         },
         {
             "id": "cert_004",
@@ -93,7 +103,7 @@
         {
             "id": "ach_002",
             "type": "leadership",
-            "title": "PICT ACM – Marketing Head & Event Lead",
+            "title": "PICT ACM \u2013 Marketing Head & Event Lead",
             "issuer": "PICT ACM Student Chapter",
             "date": "2024-2026",
             "image_url": null,
@@ -103,7 +113,7 @@
         {
             "id": "ach_003",
             "type": "leadership",
-            "title": "Electoral Literacy Club – Team Lead",
+            "title": "Electoral Literacy Club \u2013 Team Lead",
             "issuer": "Election Commission of India",
             "date": "2024-2025",
             "image_url": null,
@@ -116,8 +126,8 @@
             "title": "Competitive Programming & Problem Solving",
             "issuer": "LeetCode / CodeChef / Codeforces",
             "date": "Ongoing",
-            "image_url": "https://leetcode.com/u/tejasghoti/",
-            "credential_link": "https://leetcode.com/u/tejasghoti/",
+            "image_url": "https://leetcode.com/u/iam_vengeance/",
+            "credential_link": "https://leetcode.com/u/iam_vengeance/",
             "description": "LeetCode: 1550 Rating | CodeChef: 1466 Rating | Codeforces: 900 Rating. Solved 1,500+ algorithmic challenges."
         }
     ]
