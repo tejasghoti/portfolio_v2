@@ -13,7 +13,7 @@
         "Python"
       ],
       "github_link": "https://github.com/tejasghoti",
-      "demo_link": null,
+      "demo_link": "https://scale0-frontend-isc6mz8hd-tejas-projects-00bf5e93.vercel.app/",
       "image_url": "/projects/scale0.png",
       "status": "deployed",
       "is_featured": true
@@ -32,7 +32,7 @@
         "Tesseract OCR"
       ],
       "github_link": "https://github.com/tejasghoti",
-      "demo_link": null,
+      "demo_link": "https://traffic-violation-reporting-system.vercel.app/",
       "image_url": "/projects/trafficwatch.png",
       "status": "deployed",
       "is_featured": true
@@ -49,7 +49,7 @@
         "Python"
       ],
       "github_link": "https://github.com/tejasghoti",
-      "demo_link": null,
+      "demo_link": "https://dental-ai-phi-five.vercel.app/login",
       "image_url": "/projects/dentalai.png",
       "status": "deployed",
       "is_featured": true
@@ -67,14 +67,14 @@
         "IPFS"
       ],
       "github_link": "https://github.com/tejasghoti",
-      "demo_link": "https://blue-ledger-dapp.vercel.app/admin",
+      "demo_link": "https://blue-ledger-da-pp-v-mht80sakm-tejas-projects-00bf5e93.vercel.app/",
       "image_url": "/projects/blueledger.png",
       "status": "deployed",
       "is_featured": true
     },
     {
       "id": "eduniti",
-      "title": "EDUNITI – Scalable Learning Platform",
+      "title": "EDUNITI \u2013 Scalable Learning Platform",
       "description": "Scalable Learning Platform for High Traffic Events built with Kubernetes auto-scaling (1->8 worker replicas) and RabbitMQ submission queue handling 20,000+ exam submissions at 634 req/sec. Winner at XENIA 26.",
       "tech_stack": [
         "Kubernetes",
@@ -85,7 +85,7 @@
         "RabbitMQ"
       ],
       "github_link": "https://github.com/tejasghoti",
-      "demo_link": null,
+      "demo_link": "https://edu-niti-hackathon.vercel.app/login",
       "image_url": "/projects/stay-tuned.png",
       "status": "built",
       "is_featured": false
@@ -205,6 +205,154 @@
       "demo_link": null,
       "image_url": "/projects/stay-tuned.png",
       "status": "built",
+      "is_featured": false
+    },
+    {
+      "id": "trix",
+      "title": "Trix",
+      "description": "A modern, dynamic web application with an engaging user interface.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://trix-nu.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": true
+    },
+    {
+      "id": "goa-hacker-house",
+      "title": "Goa Hacker House V1",
+      "description": "A dedicated platform for the Goa Hacker House community, featuring event details and hackathon information.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://goa-hacker-housev1.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "prepsquad",
+      "title": "Prepsquad",
+      "description": "An intuitive platform designed to assist users with preparation and squad coordination.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://prepsquad.lovable.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "vaultis",
+      "title": "Vaultis",
+      "description": "A secure and streamlined web application for managing digital assets and information.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://vaultis.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "eventhub",
+      "title": "EventHub (Sparkle Fest)",
+      "description": "A comprehensive event management and discovery platform for Sparkle Fest.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://eventhub-sparkle-fest.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "agri-mitra",
+      "title": "Agri Mitra V2",
+      "description": "An innovative agricultural tech solution empowering farmers with modern tools and insights.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://agri-mitra-v2-6gs8.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "vahaan",
+      "title": "Vahaan Travrs V2",
+      "description": "A next-generation vehicle tracking and transport management system.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://vahaan-travrs-v2.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "gate-27",
+      "title": "Gate 27 V1",
+      "description": "A specialized web application providing streamlined access and management features.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://gate-27-v1.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "portfolio-v1",
+      "title": "Portfolio V1",
+      "description": "First iteration of my personal portfolio website built with framer.",
+      "tech_stack": [
+        "Framer"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://tejasghoti1v1.framer.website/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
+      "is_featured": false
+    },
+    {
+      "id": "portfolio-v2",
+      "title": "Portfolio V2",
+      "description": "Second iteration of my personal portfolio showcasing my latest projects.",
+      "tech_stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github_link": "https://github.com/tejasghoti",
+      "demo_link": "https://tejasghotiv2-aak1p7dck-tejas-projects-00bf5e93.vercel.app/",
+      "image_url": "/projects/stay-tuned.png",
+      "status": "deployed",
       "is_featured": false
     }
   ]
