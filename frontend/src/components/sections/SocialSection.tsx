@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight } from "react-icons/fi";
-import { SiLeetcode, SiCodechef } from "react-icons/si";
+import { SiLeetcode, SiCodechef, SiCodeforces } from "react-icons/si";
 
 const socials = [
     {
@@ -38,6 +38,15 @@ const socials = [
         link: "https://www.codechef.com/users/tejasghoti",
         icon: SiCodechef,
         color: "hover:text-amber-700",
+        desc: "Competitive Contests",
+        status: "Active Contestant"
+    },
+    {
+        name: "Codeforces",
+        handle: "tejghoti",
+        link: "https://codeforces.com/profile/tejghoti",
+        icon: SiCodeforces,
+        color: "hover:text-red-500",
         desc: "Competitive Contests",
         status: "Active Contestant"
     }
